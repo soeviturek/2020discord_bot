@@ -6,7 +6,7 @@ module.exports = {
     description: "search from gelbooru",
     async execute(message, args) {
         var options = {
-            url: "https://gelbooru.com/index.php?page=dapi&s=post&q=index&limit=10&json=1&tags=" + args.join(" "),
+            url: "https://gelbooru.com/index.php?page=dapi&s=post&q=index&limit=50&json=1&tags=" + args.join(" "),
             method: "GET",
             headers: {
                 "Accept": "text/html",
