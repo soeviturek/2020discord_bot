@@ -1,0 +1,17 @@
+{
+  "name": "discord-setu-bot",
+  "version": "1.0.0",
+  "description": "a bot to send setu on discord",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kuma",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "opusscript": "0.0.7",
+    "ytdl-core": "^4.1.4",
+    "ytsearcher": "^1.2.3"
+  }
+}
