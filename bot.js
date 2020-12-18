@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client;
 
+//create your own auth.json in the repository
+// { "token" : "YOUR TOKEN HERE"}
 const auth = require('./auth.json');
 
 const prefix = '!';
