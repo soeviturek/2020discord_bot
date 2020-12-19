@@ -59,7 +59,14 @@ client.on('message', async (message) => {
         return;
     }
     if(command == 'gel'){
-        client.commands.get('gel').execute(message,args);
+        //should do channel checking first!
+        try {
+            client.commands.get('gel').execute(message,args);
+        } catch (error) {
+            console.log(error);
+            return message.channel.send();
+        }
+        
     }
 })
 
