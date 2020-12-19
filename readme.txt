@@ -10,7 +10,7 @@ If you see the console log "setu bot online", the bot is on successfully.
 
 How to install:
 1. Install nodejs
-2. Install discord.js from the terminal: npm install dicord.js
+2. Install discord.js from the terminal: npm install discord.js
 3. Install support plugins:
 npm install --save ytdl-core opusscript
 npm i ytsearcher

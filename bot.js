@@ -63,13 +63,11 @@ client.on('message', async (message) => {
         try {
             client.commands.get('gel').execute(message,args);
         } catch (error) {
-            console.log(error);
-            return message.channel.send();
+            console.log("Catch:" + error);
+            return message.channel.send("Error!");
         }
         
     }
 })
-
-
 
 client.login(auth.token);
