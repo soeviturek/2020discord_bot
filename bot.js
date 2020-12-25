@@ -59,12 +59,16 @@ client.on('message', async (message) => {
         return;
     }
     if(command == 'gel'){
-        //should do channel checking first!
-        try {
+        if(client.command.get('tag').exactTag(message,args) == "[]"){
             client.commands.get('gel').execute(message,args);
-        } catch (error) {
-            console.log("Catch:" + error);
-            return message.channel.send("Error!");
+        }
+        else{
+            var result = client.command.get('tag').likeTags(result);
+            if(result != "[]"){
+                message.channel.send(result);
+            }else{
+                message.channel.send("Nobody here but us chickens!");
+            }
         }
         
     }
