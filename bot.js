@@ -59,18 +59,10 @@ client.on('message', async (message) => {
         return;
     }
     if(command == 'gel'){
-        if(client.command.get('tag').exactTag(message,args) == "[]"){
-            client.commands.get('gel').execute(message,args);
-        }
-        else{
-            var result = client.command.get('tag').likeTags(result);
-            if(result != "[]"){
-                message.channel.send(result);
-            }else{
-                message.channel.send("Nobody here but us chickens!");
-            }
-        }
-        
+        client.commands.get('gel').execute(message,args);      
+    }
+    if(command == 'tag'){
+        client.commands.get('tag').likeTags(message,args);
     }
 })
 
