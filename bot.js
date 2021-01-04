@@ -64,6 +64,9 @@ client.on('message', async (message) => {
     if(command == 'tag'){
         client.commands.get('tag').likeTags(message,args);
     }
+    if(command =='yand'){
+        client.commands.get('yandere').execute(message,args);
+    }
 })
 
 client.login(auth.token);
