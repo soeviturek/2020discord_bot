@@ -4,7 +4,7 @@
   "description": "a bot to send setu on discord",
   "main": "bot.js",
   "scripts": {
-    "start": "bot.js"
+    "start": "node bot.js"
   },
   "author": "kuma",
   "license": "ISC",
