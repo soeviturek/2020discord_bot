@@ -67,6 +67,12 @@ client.on('message', async (message) => {
     if(command =='yand'){
         client.commands.get('yandere').execute(message,args);
     }
+    if(command =='wpp'){
+        client.commands.get('konachannet').execute(message,args);
+    }
+    if(command =='kona'){
+        client.commands.get('konachancom').execute(message,args);
+    }
 })
 
 client.login(auth.token);

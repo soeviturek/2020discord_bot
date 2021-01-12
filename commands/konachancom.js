@@ -1,12 +1,12 @@
 const request = require('request');
 
 module.exports = {
-    name: 'yandere',
-    description: 'search image from yandere',
-    execute(message, args) {
+    name:'konachancom',
+    description:'search image from konachan.com',
+    execute(message,args){
         var options = {
             //limits is set to 100 by default
-            url: "https://yande.re/post.json?api_version=2&limit=100&tags=" + args.join("+"),
+            url: "https://konachan.com/post.json?tags=" + args.join("+"),
             method: "GET",
             headers: {
                 "Accept": "text/html",
@@ -18,16 +18,14 @@ module.exports = {
                 return;
             }
             console.log("Now searching: " + options.url);
-            // typeof response.body !== 'undefined'    
-            var rawdata = JSON.parse(responseBody);
-            var data = rawdata.posts;
-            console.log(data.length);
-            if (data.length != 0) {
+            console.log((response.body).length);
+            if((response.body).length != 0){  
+                var data = JSON.parse(responseBody);
                 //url links
                 const links = [];
                 //push links
                 for (var i = 0; i < data.length; i++) {
-                    obj = data[i];
+                      obj = data[i];
                     //checks for rating and score
                     if (obj.rating == "e" || obj.rating == "q") {
                         links.push(obj.file_url);
@@ -35,14 +33,15 @@ module.exports = {
 
                 }
                 //3. check if links is empty ..randomly send 1 result
-                if (links.length > 0) {
+                if(links.length>0){
+                    message.client.channels.cache.get('787645426647433256').send(links[Math.floor(Math.random() * links.length)]);
                     message.channel.send(links[Math.floor(Math.random() * links.length)]);
                 }
-            } else {
+            }else{
                 message.channel.send("Nobody here but us chickens!");
             }
-        });
+            });
 
-
+        
     }
 }
